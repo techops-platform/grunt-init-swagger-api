@@ -13,6 +13,17 @@ This API uses Swagger documentation, which is defined in [api/swagger](api/swagg
 
 Tests are found in [test](test).
 
+### Config
+There are three areas for configuration.
+
+  - [Swagger Configuration](config/default.yaml)
+  - [Swagger API Configuration](api/swagger/swagger.yaml)
+  - [Application Configuration](config/index.js)
+
+Application configuration is toggled by the environment variable `APP_ENV`.  Ensure there is a `config/APP_ENV.js` file and your config will be loaded dynamically.
+
+For example; `APP_ENV=prod npm run start` would attempt to load `config/prod.js`.
+
 ### Util
 [lib/util.js](lib/util.js) is just a collection of handy utilities.
 

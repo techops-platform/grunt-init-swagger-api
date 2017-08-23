@@ -41,7 +41,6 @@ exports.template = function(grunt, init, done) {
     init.prompt('author_email'),
     init.prompt('author_url'),
     init.prompt('node_version', '>= 8.1.4'),
-    init.prompt('main', 'index.js')
   ], function(err, props) {
     props.keywords = [];
     props.dependencies = {
@@ -69,6 +68,8 @@ exports.template = function(grunt, init, done) {
 
     /* jshint camelcase: false */
     props.npm_test = './node_modules/grunt/bin/grunt mochaTest';
+    props.scripts = { start: 'node index.js' };
+    props.main = 'index.js';
 
     // Files to copy (and process).
     var files = init.filesToCopy(props);
