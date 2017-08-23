@@ -46,6 +46,8 @@ And you should be able to curl it like so:
 "Hello, Karl!"%
 ```
 
+You can view the swagger documentation at `http://127.0.0.1:4000/swagger`
+
 ### Running tests
 Simply do `npm run test`.  If all is well, you should see the tests run:
 
