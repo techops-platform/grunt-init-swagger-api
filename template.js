@@ -1,14 +1,12 @@
 /*
- * grunt-init-node-mocha
+ * grunt-init-swagger-api
  *
- * Copyright (c) 2017 Karl Stoney
- * Licensed under the MIT license.
  */
 
 'use strict';
 
 // Basic template description.
-exports.description = 'Create a node.js module, including mocha for tests, and blanket for coverage';
+exports.description = 'Create a node.js api, based on restify and swagger';
 
 // Template-specific notes to be displayed before question prompts.
 exports.notes = '_Project name_ shouldn\'t contain "node" or "js" and should ' +
