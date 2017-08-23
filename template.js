@@ -42,7 +42,7 @@ exports.template = function(grunt, init, done) {
     init.prompt('author_url'),
     init.prompt('node_version', '>= 8.1.4'),
   ], function(err, props) {
-    props.keywords = [];
+    props.keywords = ['swagger', 'api'];
     props.dependencies = {
       'restify': '^5.2.0',
       'lodash': '^4.17.4',
