@@ -1,7 +1,7 @@
 /*
  * grunt-init-node-mocha
  *
- * Copyright (c) 2014 Karl Stoney
+ * Copyright (c) 2017 Karl Stoney
  * Licensed under the MIT license.
  */
 
@@ -43,9 +43,17 @@ exports.template = function(grunt, init, done) {
     init.prompt('author_email'),
     init.prompt('author_url'),
     init.prompt('node_version', '>= 8.1.4'),
-    init.prompt('main')
+    init.prompt('main', 'index.js')
   ], function(err, props) {
     props.keywords = [];
+    props.dependencies = {
+      'restify': '^5.2.0',
+      'lodash': '^4.17.4',
+      'colors': '^1.1.2',
+      'istextorbinary': '^2.1.0',
+      'swagger-restify-mw': '^0.7.0',
+      'js-yaml': '^3.9.1'
+    };
     props.devDependencies = {
       'grunt': '^1.0.1',
       'grunt-contrib-jshint': '^1.1.0',
@@ -56,24 +64,16 @@ exports.template = function(grunt, init, done) {
       'istanbul': '^0.4.5',
       'mocha': '^3.5.0',
       'mocha-jenkins-reporter': '^0.3.8',
-      'should': '^11.2.1'
+      'should': '^11.2.1',
+      'supertest': '^3.0.0',
+      'deride': '^1.1.0'
     };
 
     /* jshint camelcase: false */
     props.npm_test = './node_modules/grunt/bin/grunt mochaTest';
 
-    props.travis = !(/n/i.test(props.travis));
-    props.coveralls = !(/n/i.test(props.coveralls));
-    // Add coveralls dependencies if required
-    if (props.coveralls) {
-      props.devDependencies.coveralls = '^2.11.16';
-    }
-
     // Files to copy (and process).
     var files = init.filesToCopy(props);
-    if (!props.travis) {
-      delete files['.travis.yml'];
-    }
 
     // Add properly-named license files.
     init.addLicenseFiles(files, props.licenses);

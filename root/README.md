@@ -1,4 +1,4 @@
-# {%= name %}{% if (travis) { %} [![Build Status](https://secure.travis-ci.org/{%= git_user %}/{%= git_repo %}.png?branch=master)](http://travis-ci.org/{%= git_user %}/{%= git_repo %}){% } %} {% if (coveralls) { %}[![Coverage Status](https://coveralls.io/repos/{%= git_user %}/{%= git_repo %}/badge.png?branch=master)](https://coveralls.io/r/{%= git_user %}/{%= git_repo %}?branch=master){% } %} [![Dependency Status](https://david-dm.org/{%= git_user %}/{%= git_repo %}.svg)](https://david-dm.org/{%= git_user %}/{%= git_repo %})
+# {%= name %} [![Dependency Status](https://david-dm.org/{%= git_user %}/{%= git_repo %}.svg)](https://david-dm.org/{%= git_user %}/{%= git_repo %})
 
 {%= description %}
 
@@ -23,5 +23,5 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 _(Nothing yet)_
 
 ## License
-Copyright (c) {%= grunt.template.today('yyyy') %} {%= author_name %}  
+Copyright (c) {%= grunt.template.today('yyyy') %} {%= author_name %}
 Licensed under the {%= licenses.join(', ') %} license{%= licenses.length === 1 ? '' : 's' %}.
