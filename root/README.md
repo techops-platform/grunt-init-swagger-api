@@ -3,18 +3,18 @@
 {%= description %}
 
 ## Getting Started
-Install the module with: `npm install {%= name %}`
+To run the application, do `npm install` and then `npm run start`
 
-```javascript
-var {%= js_safe_name %} = new require('{%= name %}');
-{%= js_safe_name %}.execute(); // "awesome"
-```
+To run the tests, do `npm run test`.
 
 ## Documentation
-_(Coming soon)_
+### Swagger
+This API uses Swagger documentation, which is defined in [api/swagger](api/swagger).  Add your API documentation there and implement the controllers in [lib/controllers](lib/controllers).
 
-## Examples
-_(Coming soon)_
+Tests are found in [test](test).
+
+### Util
+[lib/util.js](lib/util.js) is just a collection of handy utilities.
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
